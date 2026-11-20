@@ -1,0 +1,59 @@
+WEBKITTY NO IPHONE — GUIA RÁPIDO
+=================================
+
+Este pacote mantém o ExploitPs4 recebido. 
+Foi acrescentado somente o arquivo exploit.py e este guia.
+O exploit continua sendo executado no navegador do PS4; o iPhone funciona
+como servidor local dos arquivos.
+
+ANTES DE COMEÇAR
+----------------
+1. Instale no iPhone um terminal que inclua Python 3, como o a-Shell.
+2. No app Arquivos, extraia este ZIP ExploitPs4.zip
+3. Copie a pasta ExploitPs4 para a pasta/documentos do a-Shell, para que
+   ela fique acessível pelo terminal.
+4. Deixe o PS4 e o iPhone na mesma rede local.
+
+OPÇÃO A — WI-FI DO ROTEADOR
+---------------------------
+1. Conecte o iPhone ao Wi-Fi do roteador.
+2. Conecte o PS4 ao mesmo Wi-Fi (ou à mesma rede local por cabo).
+3. Abra o a-Shell no iPhone.
+4. Entre na pasta do projeto. Exemplo, se ela estiver na pasta Documents:
+      cd ExploitPs4
+5. Inicie o servidor:
+      python3 exploit.py
+6. O terminal mostrará um endereço parecido com:
+      http://xxx.xxx.x.xx:8080/
+7. No navegador do PS4, abra exatamente o endereço mostrado.
+   HTTP://    :8080 no final.
+
+OPÇÃO B — ACESSO PESSOAL (HOTSPOT) DO IPHONE
+--------------------------------------------
+1. No iPhone, ative Ajustes > Acesso Pessoal > Permitir Acesso a Outros.
+2. Conecte o PS4 à rede Wi-Fi criada pelo iPhone.
+3. Mantenha o iPhone com o Acesso Pessoal ativo.
+4. No a-Shell, entre na pasta ExploitPs4 e execute:
+      python3 exploit.py
+5. Use no navegador do PS4 o endereço IP mostrado pelo terminal, incluindo
+   HTTP://    :8080 no final.
+
+IMPORTANTE
+----------
+- Use o endereço que o script mostrar. O IP pode mudar entre o Wi-Fi do
+  roteador e o Acesso Pessoal.
+- Se o iPhone perguntar se o a-Shell pode acessar a rede local, permita.
+- Mantenha o a-Shell em primeiro plano e o iPhone desbloqueado enquanto usa
+  o servidor. O iOS pode suspender aplicativos em segundo plano.
+- Se a página não abrir, confirme que os dois aparelhos estão na mesma rede,
+  que o servidor continua em execução e que o endereço contém :8080.
+- Não use 127.0.0.1 no PS4: esse endereço aponta para o próprio aparelho.
+- O servidor HTTP local não instala nem ativa GoldHEN; ele apenas entrega
+  os arquivos do host ao navegador do PS4.
+- O desempenho e a possibilidade de conexões recebidas dependem do terminal
+  escolhido e das permissões/restrições do iOS. Faça um teste de acesso antes
+  de depender dele para uso offline.
+
+Para parar o servidor: CTRL+C no a-Shell.
+
+

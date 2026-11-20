@@ -1,0 +1,110 @@
+/* Personalizacao RTG: fundo preto, logo PS branco e seletores HEN ocultos */
+html, body {
+    background: #000000 !important;
+    background-color: #000000 !important;
+}
+body, main, section, #initial-screen, #exploit-main-screen,
+#cache-screen, .page, .container {
+    background-color: #000000 !important;
+}
+#ps-logo {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
+#ps-logo-container {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+/* Remover a escolha visual de HEN e suas opcoes */
+#choosejb-initial,
+#chooseGoldHEN,
+#goldhen-label-exploit,
+#PS4HEN-label-exploit,
+#nexHEN-label-exploit {
+    display: none !important;
+}
+
+
+/* Compact Homebrew shortcuts on the first screen */
+.homebrew-footer {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    width: min(92%, 900px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    z-index: 20;
+}
+.homebrew-footer-heading {
+    flex: 0 0 100%;
+    width: 100%;
+    text-align: center;
+    color: rgba(255,255,255,.9);
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 1px;
+}
+.homebrew-footer-btn {
+    appearance: none;
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 7px;
+    background: #242424;
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background .15s ease, transform .15s ease;
+}
+.homebrew-footer-btn:hover, .homebrew-footer-btn:focus {
+    background: #3b3b3b;
+    transform: translateY(-1px);
+    outline: none;
+}
+@media (max-width: 520px) {
+    .homebrew-footer { bottom: 9px; gap: 5px; width: 94%; }
+    .homebrew-footer-heading { font-size: 12px; }
+    .homebrew-footer-btn { padding: 5px 7px; font-size: 11px; }
+}
+
+
+/* Desativar a rolagem das páginas e manter a interface fixa na tela */
+html, body {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+    touch-action: none !important;
+}
+.mainContainer,
+#initial-screen,
+#exploit-main-screen {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+    touch-action: none !important;
+}
+/* Barras de rolagem ocultas */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.mainContainer::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+html, body, .mainContainer {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
